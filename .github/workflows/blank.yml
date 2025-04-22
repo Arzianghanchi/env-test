@@ -1,20 +1,17 @@
-name: Echo ROLE by Environment
+name: Echo ROLE - Shared
 
 on:
-  workflow_dispatch:
+  workflow_call:
     inputs:
       environment:
-        description: 'Environment to deploy to'
         required: true
-        type: choice
-        options:
-          - dev
-          - prod
+        type: string
+    secrets: {} # optional if you're not passing secrets
 
 jobs:
   echo-role:
     runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.environment }}
+    environment: ${{ inputs.environment }}
 
     steps:
       - name: Echo the ROLE
