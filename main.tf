@@ -6,5 +6,5 @@ variable "aws_secret_access_key" {
 provider "aws" {
   region     = "us-west-2"
   access_key = "AKIAFAKEACCESSKEY123"
-  secret_key = var.aws_secret_access_key
+  secret_key = "sdfsdfsdfgr4w6846684gdfg"
 }
